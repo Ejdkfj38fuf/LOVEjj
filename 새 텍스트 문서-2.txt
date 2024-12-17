@@ -430,28 +430,6 @@ else
     warn("Rayfield 객체를 찾을 수 없습니다.")
 end
 
-local buildAttempts = 0
-local correctBuild = false
-local warned = false
-
--- 예시: 빌드 시도 함수
-local function attemptBuild()
-    buildAttempts = buildAttempts + 1
-    print("빌드 시도 횟수: " .. buildAttempts)
-
-    -- 성공적인 빌드 로직 추가
-    if buildAttempts >= 5 then -- 예시로 5번 시도 후 성공
-        correctBuild = true
-        print("빌드 성공!")
-    end
-end
-
--- 예시: 빌드 시도 시작
-while not correctBuild do
-    attemptBuild()
-    wait(1) -- 1초 대기
-end
-
 repeat
 	if Rayfield:FindFirstChild('Build') and Rayfield.Build.Value == InterfaceBuild then
 		correctBuild = true
