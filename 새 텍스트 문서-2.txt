@@ -416,7 +416,6 @@ if RunService:IsStudio() then
 	useStudio = true
 end
 
-
 -- Interface Management
 
 local useStudio = true -- 필요에 따라 true 또는 false로 설정하세요.
@@ -428,7 +427,10 @@ if Rayfield then
     Rayfield.Visible = false -- Rayfield가 보이지 않도록 설정
 else
     warn("Rayfield 객체를 찾을 수 없습니다.")
-end
+
+local buildAttempts = 0
+local correctBuild = false
+local warned
 
 repeat
 	if Rayfield:FindFirstChild('Build') and Rayfield.Build.Value == InterfaceBuild then
