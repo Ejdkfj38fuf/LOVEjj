@@ -416,10 +416,16 @@ if RunService:IsStudio() then
 	useStudio = true
 end
 
--- Interface Management
+- Interface Management
 
 local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
-local buildAttempts = 0.5
+
+-- Rayfield를 투명하게 설정
+if Rayfield then
+    Rayfield.Transparency = 0.5 -- 0은 불투명, 1은 완전 투명
+end
+
+local buildAttempts = 0
 local correctBuild = false
 local warned
 
