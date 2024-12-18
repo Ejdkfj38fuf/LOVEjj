@@ -419,7 +419,7 @@ end
 -- Interface Management
 
 local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
-local transparent = 0.5
+local transparent = 5.0
 local correctBuild = false
 local warned
 repeat
