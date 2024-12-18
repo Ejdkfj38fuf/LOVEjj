@@ -418,20 +418,10 @@ end
 
 -- Interface Management
 
-local useStudio = true -- 필요에 따라 true 또는 false로 설정하세요.
 local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
-
--- Rayfield를 투명하게 설정
-if Rayfield then
-    Rayfield.Transparency = 1 -- 0은 불투명, 1은 완전 투명
-    Rayfield.Visible = false -- Rayfield가 보이지 않도록 설정
-else
-    warn("Rayfield 객체를 찾을 수 없습니다.")
-
-local buildAttempts = 0
+local transparent = 0.5
 local correctBuild = false
 local warned
-
 repeat
 	if Rayfield:FindFirstChild('Build') and Rayfield.Build.Value == InterfaceBuild then
 		correctBuild = true
