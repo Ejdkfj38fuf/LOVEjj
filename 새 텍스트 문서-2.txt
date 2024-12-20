@@ -416,6 +416,22 @@ if RunService:IsStudio() then
 	useStudio = true
 end
 
+
+local uiElement = script.Parent -- UI 요소를 여기에 지정합니다 (예: ScreenGui, Frame 등)
+
+local function setRainbowColors()
+    local hue = 0
+    while true do
+        -- 무지개 색상 생성
+        local color = Color3.fromHSV(hue, 1, 1)
+        uiElement.BackgroundColor3 = color -- 배경 색상 변경
+        hue = (hue + 0.01) % 1 -- 색상 변화
+        wait(0.1) -- 색상 변화 속도 조절
+    end
+end
+
+setRainbowColors()
+
 -- Interface Management
 
 local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://10804731440")[1]
