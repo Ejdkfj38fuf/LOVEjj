@@ -11,19 +11,46 @@ local OrionLib = {
 	Connections = {},
 	Flags = {},
 	Themes = {
-OrionLib.Themes.Rainbow = {
-	Main = Color3.fromRGB(255, 0, 0),  -- 빨간색
-	Second = Color3.fromRGB(255, 127, 0),  -- 주황색
-	Stroke = Color3.fromRGB(255, 255, 0),  -- 노란색
-	Divider = Color3.fromRGB(0, 255, 0),  -- 초록색
-	Text = Color3.fromRGB(0, 0, 255),  -- 파란색
-	TextDark = Color3.fromRGB(75, 0, 130)  -- 남색
-}
-
-OrionLib.SelectedTheme = "Rainbow
-Folder = nil,
+		Rainbow = {
+			Main = Color3.fromRGB(255, 0, 0),  -- 빨간색
+			Second = Color3.fromRGB(255, 127, 0),  -- 주황색
+			Stroke = Color3.fromRGB(255, 255, 0),  -- 노란색
+			Divider = Color3.fromRGB(0, 255, 0),  -- 초록색
+			Text = Color3.fromRGB(0, 0, 255),  -- 파란색
+			TextDark = Color3.fromRGB(75, 0, 130)  -- 남색
+		}
+	},
+	SelectedTheme = "Rainbow",
+	Folder = nil,
 	SaveCfg = false
 }
+
+-- GUI 요소 생성
+local screenGui = Instance.new("ScreenGui", LocalPlayer:WaitForChild("PlayerGui"))
+local frame = Instance.new("Frame", screenGui)
+frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+
+local function updateRainbowColors()
+	local hue = 0
+	RunService.RenderStepped:Connect(function()
+		hue = (hue + 0.005) % 1 -- 색상의 hue 값을 증가시킴
+		local color = Color3.fromHSV(hue, 1, 1) -- HSV 색상 모델로 색상 생성
+
+		-- 각 색상 속성에 대한 업데이트
+		OrionLib.Themes.Rainbow.Main = color
+		OrionLib.Themes.Rainbow.Second = Color3.fromHSV((hue + 0.1) % 1, 1, 1)
+		OrionLib.Themes.Rainbow.Stroke = Color3.fromHSV((hue + 0.2) % 1, 1, 1)
+		OrionLib.Themes.Rainbow.Divider = Color3.fromHSV((hue + 0.3) % 1, 1, 1)
+		OrionLib.Themes.Rainbow.Text = Color3.fromHSV((hue + 0.4) % 1, 1, 1)
+		OrionLib.Themes.Rainbow.TextDark = Color3.fromHSV((hue + 0.5) % 1, 1, 1)
+
+		-- 프레임 배경색 업데이트
+		frame.BackgroundColor3 = OrionLib.Themes.Rainbow.Main
+	end)
+end
+
+updateRainbowColors()
 
 --Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
