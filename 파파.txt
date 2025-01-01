@@ -10,7 +10,7 @@ local a,b={{1,'ModuleScript',{'MainModule'},{{18,'ModuleScript',{'Creator'}},{28
 	Name = "Aqua",
 	Accent = Color3.fromRGB(24,63,104),
 
-	AcrylicMain = Color3.fromRGB(255, 0, 0),
+	AcrylicMain = Color3.fromRGB(20, 20, 20),
 	AcrylicBorder = Color3.fromRGB(50, 100, 100),
 	AcrylicGradient = ColorSequence.new(Color3.fromRGB(60, 140, 140), Color3.fromRGB(40, 80, 80)),
 	AcrylicNoise = 0.92,
