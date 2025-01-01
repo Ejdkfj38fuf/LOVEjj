@@ -1,4 +1,4 @@
---[[
+d--[[
     Fluent Interface Suite
     This script is not intended to be modified.
     To view the source code, see the 'src' folder on GitHub!
@@ -11,8 +11,8 @@ local a,b={{1,'ModuleScript',{'MainModule'},{{18,'ModuleScript',{'Creator'}},{28
 	Accent = Color3.fromRGB(24,63,104),
 
 	AcrylicMain = Color3.fromRGB(20, 20, 20),
-	AcrylicBorder = Color3.fromRGB(50, 100, 100),
-	AcrylicGradient = ColorSequence.new(Color3.fromRGB(60, 140, 140), Color3.fromRGB(40, 80, 80)),
+	AcrylicBorder = Color3.fromRGB(24,63,104),
+	AcrylicGradient = ColorSequence.new(Color3.fromRGB(24,63,104), Color3.fromRGB(24,83,104)),
 	AcrylicNoise = 0.92,
 
 	TitleBarLine = Color3.fromRGB(60, 120, 120),
